@@ -59,7 +59,7 @@ lyr_Gare_2.set('fieldAliases', {'fid': 'fid', 'nom_gare': 'nom_gare', 'Ligne de 
 lyr_Tracduparcours_1.set('fieldImages', {'fid': 'TextEdit', 'Randonnée': 'TextEdit', 'duree': 'Range', 'denivele': 'Range', 'distance': 'Range', 'layer': 'TextEdit', 'path': 'TextEdit', 'niveau': 'TextEdit', 'popup': 'TextEdit', });
 lyr_Gare_2.set('fieldImages', {'fid': 'TextEdit', 'nom_gare': 'TextEdit', 'Ligne de train': 'TextEdit', 'temps_trajet': 'Range', 'altitude_gare': 'Range', 'commune': 'TextEdit', 'Temps de trajet': 'TextEdit', 'Altitude de la gare': 'Range', });
 lyr_Tracduparcours_1.set('fieldLabels', {'fid': 'hidden field', 'Randonnée': 'hidden field', 'duree': 'hidden field', 'denivele': 'hidden field', 'distance': 'hidden field', 'layer': 'hidden field', 'path': 'hidden field', 'niveau': 'hidden field', 'popup': 'no label', });
-lyr_Gare_2.set('fieldLabels', {'fid': 'hidden field', 'nom_gare': 'hidden field', 'Ligne de train': 'inline label - visible with data', 'temps_trajet': 'inline label - visible with data', 'altitude_gare': 'hidden field', 'commune': 'hidden field', 'Temps de trajet': 'inline label - visible with data', 'Altitude de la gare': 'inline label - visible with data', });
+lyr_Gare_2.set('fieldLabels', {'fid': 'hidden field', 'nom_gare': 'hidden field', 'Ligne de train': 'inline label - visible with data', 'temps_trajet': 'hidden field', 'altitude_gare': 'hidden field', 'commune': 'hidden field', 'Temps de trajet': 'inline label - visible with data', 'Altitude de la gare': 'inline label - visible with data', });
 lyr_Gare_2.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
