@@ -97,7 +97,7 @@ Carte réalisée avec QGIS et qgis2web — données : tracés personnels, fond I
 </div>
         <div style="
 position:absolute;
-top:250px;
+top:220px;
 left:60px;
 z-index:1000;
 background:white;
@@ -140,18 +140,18 @@ function filtrerNiveau() {
 
 var niveau = document.getElementById("filtreNiveau").value;
 
-layer_Tracduparcours_1.eachLayer(function(layer){
+var features = layer_Tracduparcours_1.getSource().getFeatures();
 
-if(niveau === "tous"){
-layer.setStyle({opacity:1});
-}
+features.forEach(function(feature){
 
-else if(layer.feature.properties.niveau === niveau){
-layer.setStyle({opacity:1});
+var valeur = feature.get("niveau");
+
+if(niveau === "tous" || valeur === niveau){
+feature.setStyle(null);
 }
 
 else{
-layer.setStyle({opacity:0});
+feature.setStyle(new ol.style.Style({}));
 }
 
 });
@@ -160,9 +160,8 @@ layer.setStyle({opacity:0});
 
 </script>
 
-</body>
-</html>
     </body>
 </html>
+
 
 
