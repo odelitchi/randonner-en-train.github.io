@@ -11,10 +11,7 @@ function categories_Tracduparcours_1(feature, value, size, resolution, labelText
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
-                    if (feature.get("hidden")) {
-    return null;
-}
-                    break;
+                                       break;
 case 'Facile':
                     return [ new ol.style.Style({
         stroke: new ol.style.Stroke({color: 'rgba(0,216,19,1.0)', lineDash: [2.28,4.56], lineCap: 'round', lineJoin: 'round', width: 2.28}),
@@ -49,6 +46,10 @@ default:
                     break;}};
 
 var style_Tracduparcours_1 = function(feature, resolution){
+
+if (feature.get("hidden") === true) {
+return null;
+}
     var context = {
         feature: feature,
         variables: {}
