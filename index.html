@@ -144,17 +144,18 @@ var features = layer_Tracduparcours_1.getSource().getFeatures();
 
 features.forEach(function(feature){
 
-var valeur = feature.get("niveau");
+var val = feature.get("niveau");
 
-if(niveau === "tous" || valeur === niveau){
-feature.setStyle(null);
+if(niveau === "tous" || val === niveau){
+feature.set("hidden", false);
 }
-
 else{
-feature.setStyle(new ol.style.Style({}));
+feature.set("hidden", true);
 }
 
 });
+
+layer_Tracduparcours_1.changed();
 
 }
 
@@ -162,6 +163,7 @@ feature.setStyle(new ol.style.Style({}));
 
     </body>
 </html>
+
 
 
 
