@@ -11,6 +11,9 @@ function categories_Tracduparcours_1(feature, value, size, resolution, labelText
                               labelFill, placement, bufferColor,
                               bufferWidth)
     })];
+                    if (feature.get("hidden")) {
+    return null;
+}
                     break;
 case 'Facile':
                     return [ new ol.style.Style({
