@@ -97,11 +97,15 @@ border-radius:3px;
 .moyen{background:#ffe119;}
 .difficile{background:#e6194b;}
 .dur{background:#000000;}
+
+            #infoBox{
+position:relative;
+}
         </style>
         <title></title>
     </head>
     <body>
-        <div style="
+      <div id="infoBox" style="
 position:absolute;
 top:15px;
 left:60px;
@@ -114,9 +118,14 @@ font-family:Arial, Helvetica, sans-serif;
 max-width:240px;
 line-height:1.4;
 ">
-<button onclick="document.getElementById('info').style.display='none'">
-Fermer
-</button>
+<span id="closeInfo" style="
+position:absolute;
+top:8px;
+right:10px;
+cursor:pointer;
+font-size:18px;
+color:#555;
+">✖</span>
             
 <h2 style="
 margin-top:0;
@@ -180,8 +189,17 @@ Carte réalisée avec QGIS et qgis2web — données : tracés personnels, fond I
 
 </div>
 
+        <script>
+
+document.getElementById("closeInfo").onclick = function() {
+document.getElementById("infoBox").style.display = "none";
+};
+
+</script>
+        
     </body>
 </html>
+
 
 
 
