@@ -106,26 +106,40 @@ position:relative;
     </head>
     <body>
       <div id="infoBox" style="
-position:absolute;
-top:15px;
-left:60px;
-z-index:1000;
-background:rgba(255,255,255,0.8);
-padding:16px;
-border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.25);
-font-family:Arial, Helvetica, sans-serif;
-max-width:240px;
-line-height:1.4;
-">
-<span id="closeInfo" style="
-position:absolute;
-top:8px;
-right:10px;
-cursor:pointer;
-font-size:18px;
-color:#555;
-">✖</span>
+#infoBox {
+    position: absolute;
+    top: 15px;
+    left: 60px;
+    z-index: 1000;
+    background: rgba(255,255,255,0.8);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 240px;
+    line-height: 1.4;
+}
+
+#infoBox h2 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+#closeInfo {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.2s;
+}
+
+#closeInfo:hover {
+    color: #000;
+}
             
 <h2 style="
 margin-top:0;
@@ -189,16 +203,43 @@ Carte réalisée avec QGIS et qgis2web — données : tracés personnels, fond I
 
 </div>
 
+        <!-- Bouton pour rouvrir l'encart -->
+<button id="openInfo" style="
+position:absolute;
+top:15px;
+left:60px;
+z-index:1001;
+padding:6px 10px;
+font-size:12px;
+border-radius:5px;
+border:none;
+background:#3cb44b;
+color:white;
+cursor:pointer;
+display:none;">
+ℹ️ Infos
+</button>
         <script>
 
-document.getElementById("closeInfo").onclick = function() {
-document.getElementById("infoBox").style.display = "none";
+const infoBox = document.getElementById("infoBox");
+const closeBtn = document.getElementById("closeInfo");
+const openBtn = document.getElementById("openInfo");
+
+closeBtn.onclick = function() {
+    infoBox.style.display = "none";
+    openBtn.style.display = "block"; // afficher le bouton pour rouvrir
+};
+
+openBtn.onclick = function() {
+    infoBox.style.display = "block";
+    openBtn.style.display = "none"; // masquer le bouton quand l'encart est ouvert
 };
 
 </script>
         
     </body>
 </html>
+
 
 
 
